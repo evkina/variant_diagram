@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.variant_diagram.HelloController">
+    <center>
+        <ScrollPane fx:id="paneScroll" centerShape="false" pickOnBounds="false" prefHeight="540.0" prefWidth="584.0" BorderPane.alignment="CENTER">
+            <content>
+                <Pane fx:id="_pane" focusTraversable="true" />
+            </content>
+        </ScrollPane>
+    </center>
+    <top>
+        <VBox prefHeight="117.0" prefWidth="584.0" BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Файл">
+                            <items>
+                                <MenuItem fx:id="OpenFile" mnemonicParsing="false" onAction="#ClickOpenFile" text="Импорт" />
+                                <MenuItem fx:id="SaveFile" mnemonicParsing="false" onAction="#ClickSaveFile" text="Экспорт" />
+                                <MenuItem fx:id="ExpFile" mnemonicParsing="false" onAction="#ClickExpFile" text="Сохранить png" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <HBox prefHeight="43.0" prefWidth="584.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#BlockClick" prefHeight="46.0" prefWidth="133.0" text="Участник">
+                            <graphic>
+                                <ImageView fitHeight="38.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/actor.jpg" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#BlockClickState" prefHeight="46.0" prefWidth="134.0" text="Вариант">
+                            <graphic>
+                                <ImageView fitHeight="38.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/usecase.jpg" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#BlockClickText" prefHeight="46.0" prefWidth="134.0" text="Текст">
+                            <graphic>
+                                <ImageView fitHeight="38.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/text.jpg" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <ToggleButton fx:id="_eraserButton" mnemonicParsing="false" onAction="#eraserClick" prefHeight="46.0" prefWidth="132.0" text="Ластик">
+                            <graphic>
+                                <ImageView fitHeight="38.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/erase.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </ToggleButton>
+                    </children></HBox>
+                <HBox prefHeight="45.0" prefWidth="584.0">
+                    <children>
+                        <ToggleButton fx:id="_associationLineButton" mnemonicParsing="false" onAction="#associoationClick" text="Ассоциация">
+                            <graphic>
+                                <ImageView fitHeight="38.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/dircomm.jpg" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="_dottedLineButton" mnemonicParsing="false" onAction="#dottedClick" prefHeight="46.0" prefWidth="134.0" text="Зависимость">
+                            <graphic>
+                                <ImageView fitHeight="38.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/objectflow.jpg" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </ToggleButton>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+</BorderPane>
