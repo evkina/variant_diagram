@@ -6,17 +6,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 /**
- * Class for sceneBlock
+ * Класс фигуры начальной сцены
  */
-public class sceneBlock extends shapes {
+public class SceneBlock extends Shapes {
 
     private static float lineWidth = 3f;
-    public sceneBlock(Point2D _point, String _text, DragListener _onDrag) {
-        super(shapeType.SCENE,_point,_text,_onDrag);
+    public SceneBlock(Point2D _point, String _text, DragListener _onDrag) {
+        super(ShapeType.SCENE,_point,_text,_onDrag);
     }
 
     /**
-     * drawing on scene
+     * Метод для отрисовки фигуры
      */
     @Override public void draw() {
         _textField.applyCss();

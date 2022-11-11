@@ -2,10 +2,11 @@ package Shape;
 
 import java.io.Serializable;
 
+//создание типов данных соответствующих создаваемым фигурам
 /**
- * Enum class with types of block
+ * Enum перечисление, создание новых типов данных
  */
-public enum shapeType implements Serializable {
+public enum ShapeType implements Serializable {
     SCENE,
     ACTOR,
     USECASE,

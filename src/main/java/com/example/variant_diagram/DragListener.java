@@ -1,12 +1,12 @@
 package com.example.variant_diagram;
 
 /**
- * Interface for dragging objects
- * Author Evkina
+ * Интерфейс для перемещения объектов
+ * Автор Евкина Дарья
  */
 public interface DragListener {
     /**
-     * Method for dragging
+     * Метод для перемещения
      */
     void onDrag();
 }

@@ -7,17 +7,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 
 /**
- * actorBlock Class
+ * Класс фигуры Участник
  */
-public class actorBlock extends shapes {
+public class ActorBlock extends Shapes {
     private static float _lineWidth = 2f;
 
-    public actorBlock(Point2D _point, String _text, DragListener _onDrag) {
-        super(shapeType.ACTOR,_point,_text,_onDrag);
+    public ActorBlock(Point2D _point, String _text, DragListener _onDrag) {
+        super(ShapeType.ACTOR,_point,_text,_onDrag);
     }
 
     /**
-     * drawing on scene
+     * Метод для отрисовки фигуры
      */
     public void draw()
     {

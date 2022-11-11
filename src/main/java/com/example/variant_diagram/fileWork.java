@@ -1,7 +1,8 @@
 package com.example.variant_diagram;
 
-import Shape.arrowList;
-import Shape.shapeList;
+import Shape.ArrowList;
+import Shape.ShapeList;
+import Shape.Shapes;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.image.WritableImage;
@@ -14,19 +15,19 @@ import java.io.*;
 
 
 /**
- * Class for work with file
- * Author Evkina
+ * Класс для работы с файлом
+ * Автор Евкина
  */
-public class fileWork {
-    /** Method for saving file
-     * @param _pane pane for drawing
-     * @param _shapeList list of blocks on scheme
-     * @param _arrowList list of arrows on scheme
+public class FileWork {
+    /** Метод сохранения в файл
+     * @param _pane панель для рисования
+     * @param _shapeList список объектов на схеме
+     * @param _arrowList список стрелок на схеме
      */
-    public static void saveFile(Pane _pane, shapeList _shapeList, arrowList _arrowList) {
+    public static void saveFile(Pane _pane, ShapeList _shapeList, ArrowList _arrowList, Shapes _sceneShape) {
         FileChooser _fileChooser = new FileChooser();
         _fileChooser.setTitle("Выберите папку для сохранения...");
-        _fileChooser.setInitialFileName("MyProject");
+        _fileChooser.setInitialFileName(_sceneShape.get_textField().getText());
         _fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Файл", "*.ActDiagram"));
         File _file = _fileChooser.showSaveDialog(_pane.getScene().getWindow());
         try {
@@ -45,12 +46,13 @@ public class fileWork {
         }
     }
 
-    /** Method for export image
-     * @param _pane pane for drawing
+    /** Метод сохранения в png
+     * @param _pane панель для рисования
      */
-    public static void exportFile(Pane _pane){
+    public static void savePNG(Pane _pane, Shapes _sceneShape){
         FileChooser _fileChooser = new FileChooser();
         _fileChooser.getExtensionFilters().clear();
+        _fileChooser.setInitialFileName(_sceneShape.get_textField().getText());
         _fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("png files (*.png)", "*.png"));
 
         File _file = _fileChooser.showSaveDialog(null);

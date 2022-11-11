@@ -7,17 +7,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 /**
- * Class for TextBlock
+ * Класс фигуры Текст
  */
-public class textBlock extends shapes {
+public class TextBlock extends Shapes {
     private static float _offset = 10f;
     private static float _lineWidth = 2f;
-    public textBlock(Point2D _point, String _text, DragListener _onDrag) {
-        super(shapeType.TEXT,_point,_text,_onDrag);
+    public TextBlock(Point2D _point, String _text, DragListener _onDrag) {
+        super(ShapeType.TEXT,_point,_text,_onDrag);
     }
 
     /**
-     * drawing block on scheme
+     * Метод для отрисовки фигуры
      */
     public void draw()
     {

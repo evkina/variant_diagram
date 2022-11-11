@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.variant_diagram.HelloController">
+<BorderPane prefHeight="658.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.variant_diagram.HelloController">
     <center>
         <ScrollPane fx:id="paneScroll" centerShape="false" pickOnBounds="false" prefHeight="540.0" prefWidth="584.0" BorderPane.alignment="CENTER">
             <content>
@@ -19,16 +20,17 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="Файл">
                             <items>
-                                <MenuItem fx:id="OpenFile" mnemonicParsing="false" onAction="#ClickOpenFile" text="Импорт" />
-                                <MenuItem fx:id="SaveFile" mnemonicParsing="false" onAction="#ClickSaveFile" text="Экспорт" />
-                                <MenuItem fx:id="ExpFile" mnemonicParsing="false" onAction="#ClickExpFile" text="Сохранить png" />
+                                <MenuItem mnemonicParsing="false" onAction="#ClickOpenFile" text="Импорт" />
+                                <MenuItem mnemonicParsing="false" onAction="#ClickOpenDir" text="Открыть директорию" />
+                                <MenuItem mnemonicParsing="false" onAction="#ClickSaveFile" text="Экспорт" />
+                                <MenuItem mnemonicParsing="false" onAction="#ClickExpFile" text="Сохранить png" />
                             </items>
                         </Menu>
                     </menus>
                 </MenuBar>
                 <HBox prefHeight="43.0" prefWidth="584.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#BlockClick" prefHeight="46.0" prefWidth="133.0" text="Участник">
+                        <Button mnemonicParsing="false" onAction="#actorClick" prefHeight="46.0" prefWidth="133.0" text="Участник">
                             <graphic>
                                 <ImageView fitHeight="38.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -37,7 +39,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#BlockClickState" prefHeight="46.0" prefWidth="134.0" text="Вариант">
+                        <Button mnemonicParsing="false" onAction="#useCaseClick" prefHeight="46.0" prefWidth="134.0" text="Вариант">
                             <graphic>
                                 <ImageView fitHeight="38.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -46,7 +48,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#BlockClickText" prefHeight="46.0" prefWidth="134.0" text="Текст">
+                        <Button mnemonicParsing="false" onAction="#textClick" prefHeight="46.0" prefWidth="134.0" text="Текст">
                             <graphic>
                                 <ImageView fitHeight="38.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -90,4 +92,58 @@
             </children>
         </VBox>
     </top>
+   <right>
+      <VBox fx:id="stepPane" prefHeight="540.0" prefWidth="222.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="37.0" prefWidth="222.0">
+               <children>
+                  <Label fx:id="labelStepOne" text="Шаг 1">
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="stepOneTextField" />
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+             <HBox prefHeight="37.0" prefWidth="222.0">
+                 <children>
+                     <Label fx:id="labelStepTwo" text="Шаг 2*">
+                         <HBox.margin>
+                             <Insets right="10.0" top="5.0" />
+                         </HBox.margin>
+                     </Label>
+                     <TextField fx:id="stepTwoTextField" />
+                 </children>
+                 <padding>
+                     <Insets left="15.0" />
+                 </padding>
+                 <VBox.margin>
+                     <Insets top="10.0" />
+                 </VBox.margin>
+             </HBox>
+             <HBox prefHeight="37.0" prefWidth="222.0">
+                 <children>
+                     <Label fx:id="labelStepThree" text="Шаг 3*">
+                         <HBox.margin>
+                             <Insets right="10.0" top="5.0" />
+                         </HBox.margin>
+                     </Label>
+                     <TextField fx:id="stepThreeTextField" />
+                 </children>
+                 <padding>
+                     <Insets left="15.0" />
+                 </padding>
+                 <VBox.margin>
+                     <Insets top="10.0" />
+                 </VBox.margin>
+             </HBox>
+         </children>
+      </VBox>
+   </right>
 </BorderPane>

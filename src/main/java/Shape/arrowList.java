@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * list of arrows
+ * Список стрелок
  */
-public class arrowList implements Serializable {
-    public List<arrow> _arrowList;
-    public arrowList()
+public class ArrowList implements Serializable {
+    public List<Arrow> _arrowList;
+    public ArrowList()
     {
         _arrowList = new ArrayList<>();
     }

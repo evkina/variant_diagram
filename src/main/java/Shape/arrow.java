@@ -9,17 +9,25 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Arrow class
+ * Класс для стрелок
  */
-public class arrow extends Group implements Serializable {
+public class Arrow extends Group implements Serializable {
     transient private final Line _line;
-    public shapes _from;
-    public shapes _to;
+    public Shapes _from;
+    public Shapes _to;
     public String _type;
     private static final double _arrowLength = 20;
     private static final double _arrowWidth = 7;
 
-    public arrow(Line _line, Line _arrow1, Line _arrow2, shapes _from, shapes _to, String _type) {
+    /** Метод создания стрелки
+     * @param _line главная линия
+     * @param _arrow1 первая линия разветвления на конце
+     * @param _arrow2 вторая линия разветвления на конце
+     * @param _from фигура от которой будет идти стрелка
+     * @param _to фигура к которой будет идти стрелка
+     * @param _type тип стрелки
+     */
+    public Arrow(Line _line, Line _arrow1, Line _arrow2, Shapes _from, Shapes _to, String _type) {
         super(_line, _arrow1, _arrow2);
         this._from = _from;
         this._to = _to;
@@ -42,8 +50,7 @@ public class arrow extends Group implements Serializable {
             _arrow2.setEndY(_endY);
 
             if (_endX == _startX && _endY == _startY) {
-                // arrow parts of length 0
-
+                // если длинна стрелки равна 0
                 _arrow1.setStartX(_endX);
                 _arrow1.setStartY(_endY);
                 _arrow2.setStartX(_endX);
@@ -53,7 +60,6 @@ public class arrow extends Group implements Serializable {
                 double _factor = _arrowLength / _hypot;
                 double _factorO = _arrowWidth / _hypot;
 
-                // part in direction of main line
                 double _directoryX = (_startX - _endX) * _factor;
                 double _directoryY = (_startY - _endY) * _factor;
 
@@ -68,7 +74,6 @@ public class arrow extends Group implements Serializable {
             }
         };
 
-        // add updater to properties
         startXProperty().addListener(updater);
         startYProperty().addListener(updater);
         endXProperty().addListener(updater);
@@ -76,58 +81,64 @@ public class arrow extends Group implements Serializable {
         updater.invalidated(null);
     }
 
-    // start/end properties
-
-    /** getting a start on X
+    /**
+     * Получение начала X
      * @return StartX
      */
     public final double getStartX() {
         return _line.getStartX();
     }
 
-    /** getting a startProperty on X
+    /**
+     * Получение свойств начала X
      * @return StartXProperty
      */
     public final DoubleProperty startXProperty() {
         return _line.startXProperty();
     }
 
-    /** getting a start on Y
+    /**
+     * Получение начала Y
      * @return StartY
      */
     public final double getStartY() {
         return _line.getStartY();
     }
 
-    /** getting a startProperty on X
+    /**
+     * Получение свойств начала Y
      * @return StartYProperty
      */
     public final DoubleProperty startYProperty() {
         return _line.startYProperty();
     }
 
-    /** getting end on X
+    /**
+     * Получение конца X
      * @return EndX
      */
     public final double getEndX() {
         return _line.getEndX();
     }
 
-    /** getting endProperty on X
+    /**
+     * Получение свойств конца X
      * @return EndXProperty
      */
     public final DoubleProperty endXProperty() {
         return _line.endXProperty();
     }
 
-    /** Getting end on Y
+    /**
+     * Получение конца Y
      * @return end on Y
      */
     public final double getEndY() {
         return _line.getEndY();
     }
 
-    /** Getting endYProperty
+    /**
+     * Получение свойств конца Y
      * @return endProperty on Y
      */
     public final DoubleProperty endYProperty() {
